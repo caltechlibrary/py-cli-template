@@ -31,19 +31,20 @@
             "givenName": "Tommy"
         }
     ],
-    "issueTracker": "https://github.com/caltechlibrary/template/issues",
-    "license": "https://github.com/caltechlibrary/template/blob/main/LICENSE",
+    "issueTracker": "https://github.com/caltechlibrary/py-cli-template/issues",
+    "license": "https://github.com/caltechlibrary/py-cli-template/blob/main/LICENSE",
     "developmentStatus": "active",
-    "downloadUrl": "https://github.com/caltechlibrary/template/archive/main.zip",
-    "codeRepository": "https://github.com/caltechlibrary/template",
-    "datePublished": "2021-08-31",
+    "downloadUrl": "https://github.com/caltechlibrary/py-cli-template/archive/main.zip",
+    "codeRepository": "https://github.com/caltechlibrary/py-cli-template",
+    "datePublished": "2021-10-14",
     "keywords": [
         "template",
+        "python",
         "software"
     ],
-    "name": "Caltech Library Software Repository Template",
+    "name": "Caltech Library Python Software Repository Template",
     "description": "Template repository for software projects by the Caltech Library",
-    "version": "1.12.0",
+    "version": "0.0.1",
     "maintainer": "https://orcid.org/0000-0001-9105-5960",
     "funder": {
           "@id": "https://doi.org/10.13039/100006961",
