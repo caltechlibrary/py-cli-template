@@ -34,7 +34,10 @@ jobs:
       - run: echo "URLNAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
         shell: bash
 
-      - run: echo "CREATOR=\"$(curl https://api.github.com/users/${{ env.NAME }} | jq '.name')\"" >> $GITHUB_ENV
+      - run: echo "USER=$(echo '${{ github.creator }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+        shell: bash
+
+      - run: echo "AUTHOR=\"$(curl https://api.github.com/users/${{ env.USER }} | jq '.name')\"" >> $GITHUB_ENV
         shell: bash
         
       - run: echo "DESCRIPTION=\"$(curl https://api.github.com/repos/${{ github.repository}} | jq '.description')\"" >> $GITHUB_ENV
@@ -47,8 +50,8 @@ jobs:
       - name: Rename the project
         if: steps.is_template.outputs.is_template == 'true'
         run: |
-          echo "Performing substitutions with -a ${{ env.CREATOR }} -n ${{ env.NAME }} -u ${{ env.URLNAME }}"
-          .github/rename_project.sh -a ${{ env.CREATOR }} -n ${{ env.NAME }} -u ${{ env.URLNAME }} -d "${{ env.DESCRIPTION }}"
+          echo "Performing substitutions with -a ${{ env.AUTHOR }} -n ${{ env.NAME }} -u ${{ env.URLNAME }}"
+          .github/rename_project.sh -a ${{ env.AUTHOR }} -n ${{ env.NAME }} -u ${{ env.URLNAME }} -d "${{ env.DESCRIPTION }}"
               
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
