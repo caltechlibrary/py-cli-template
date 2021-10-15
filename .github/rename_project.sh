@@ -43,6 +43,10 @@ do
 done
 
 mv project_name $name
+rm -f codemeta.json
+mv codemeta-TEMPLATE.json codemeta.json
+rm -f CITATION.cff
+mv CITATION-TEMPLATE.cff CITATION.cff
 
 # This command runs only once on GHA!
 rm -rf .github/template.yml
