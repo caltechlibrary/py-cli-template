@@ -69,7 +69,7 @@ This section is optional; if your repository is for a project that accepts open-
 
 ## License
 
-Software produced by the Caltech Library is Copyright © 2021 California Institute of Technology.  This software is freely distributed under a BSD/MIT type license.  Please see the [LICENSE](LICENSE) file for more information.
+Software produced by the Caltech Library is Copyright © %CREATION_YEAR% California Institute of Technology.  This software is freely distributed under a BSD/MIT type license.  Please see the [LICENSE](LICENSE) file for more information.
 
 
 ## Authors and history
