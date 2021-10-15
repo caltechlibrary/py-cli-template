@@ -50,8 +50,8 @@ jobs:
       - name: Rename the project
         if: steps.is_template.outputs.is_template == 'true'
         run: |
-          echo "Performing substitutions with -a ${{ env.AUTHOR }} -n ${{ env.NAME }} -u ${{ env.URLNAME }}"
-          .github/rename_project.sh -a ${{ env.AUTHOR }} -n ${{ env.NAME }} -u ${{ env.URLNAME }} -d "${{ env.DESCRIPTION }}"
+          echo "Performing substitutions"
+          .github/rename_project.sh -a \"${{ env.AUTHOR }}\" -n ${{ env.NAME }} -u ${{ env.URLNAME }} -d \"${{ env.DESCRIPTION }}\""
               
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
