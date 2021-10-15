@@ -5,3 +5,6 @@
 # @license Please see the file named LICENSE in the project directory
 # @website https://github.com/caltechlibrary/%PROJECT_URLNAME%
 # =============================================================================
+
+boltons
+sidetrack
