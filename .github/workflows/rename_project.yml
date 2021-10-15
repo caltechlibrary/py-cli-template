@@ -37,7 +37,7 @@ jobs:
       - run: echo "CREATOR=$(echo '${{ github.actor }}' | awk -F '/' '{print $1}')" >> $GITHUB_ENV
         shell: bash
         
-      - run: echo "DESCRIPTION=$(curl ${{ github.repository}} | jq '.description')" >> $GITHUB_ENV
+      - run: echo "DESCRIPTION=$(curl https://github.com/${{ github.repository}} | jq '.description')" >> $GITHUB_ENV
         shell: bash
 
       - name: Is this still a template
