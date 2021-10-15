@@ -21,31 +21,25 @@ do
     esac
 done
 
-echo "Author: $author";
-echo "Project Name: $name";
+echo "Author name: $author";
+echo "Project name: $name";
 echo "Project URL name: $urlname";
 echo "Description: $description";
 
 echo "Renaming project..."
-
-original_author="%AUTHOR_NAME%"
-original_name="%PROJECT_NAME%"
-original_urlname="%PROJECT_URLNAME%"
-original_description="%PROJECT_DESCRIPTION%"
 
 creation_date=$(date +"%Y-%m-%d")
 creation_year=$(date +"%Y")
 
 for filename in $(git ls-files)
 do
-    sed -i "s/$original_author/$author/g" $filename
-    sed -i "s/$original_name/$name/g" $filename
-    sed -i "s/$original_urlname/$urlname/g" $filename
-    sed -i "s/$original_description/$description/g" $filename
-
+    sed -i "s/%AUTHOR_NAME%/$author/g" $filename
+    sed -i "s/%PROJECT_NAME%/$name/g" $filename
+    sed -i "s/%PROJECT_URLNAME%/$urlname/g" $filename
+    sed -i "s/%PROJECT_DESCRIPTION%/$description/g" $filename
     sed -i "s/%CREATION_DATE%/$creation_date/g" $filename
     sed -i "s/%CREATION_YEAR%/$creation_year/g" $filename
-    echo "Renamed $filename"
+    echo "Performed substitutions in $filename"
 done
 
 mv project_name $name
