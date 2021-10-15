@@ -34,13 +34,10 @@ jobs:
       - run: echo "URLNAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
         shell: bash
 
-      - run: echo "USER=$(echo '${{ github.actor }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
-        shell: bash
-
-      - run: echo "AUTHOR=\"$(curl https://api.github.com/users/${{ github.actor }} | jq '.name')\"" >> $GITHUB_ENV
+      - run: echo "AUTHOR=$(curl https://api.github.com/users/${{ github.actor }} | jq '.name')" >> $GITHUB_ENV
         shell: bash
         
-      - run: echo "DESCRIPTION=\"$(curl https://api.github.com/repos/${{ github.repository}} | jq '.description')\"" >> $GITHUB_ENV
+      - run: echo "DESCRIPTION=$(curl https://api.github.com/repos/${{ github.repository}} | jq '.description')" >> $GITHUB_ENV
         shell: bash
 
       - name: Is this still a template
@@ -51,7 +48,7 @@ jobs:
         if: steps.is_template.outputs.is_template == 'true'
         run: |
           echo "Performing substitutions"
-          .github/rename_project.sh -a \"${{ env.AUTHOR }}\" -n ${{ env.NAME }} -u ${{ env.URLNAME }} -d \"${{ env.DESCRIPTION }}\""
+          .github/rename_project.sh -a ${{ env.AUTHOR }} -n ${{ env.NAME }} -u ${{ env.URLNAME }} -d ${{ env.DESCRIPTION }}"
               
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
