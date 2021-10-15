@@ -34,7 +34,7 @@ jobs:
       - run: echo "URLNAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
         shell: bash
 
-      - run: echo "CREATOR=$(echo '${{ github.actor }}' | awk -F '/' '{print $1}')" >> $GITHUB_ENV
+      - run: echo "CREATOR=\"$(curl https://api.github.com/users/${{ env.NAME }} | jq '.name')\"" >> $GITHUB_ENV
         shell: bash
         
       - run: echo "DESCRIPTION=\"$(curl https://api.github.com/repos/${{ github.repository}} | jq '.description')\"" >> $GITHUB_ENV
