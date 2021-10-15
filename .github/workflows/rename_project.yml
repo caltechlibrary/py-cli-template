@@ -21,6 +21,9 @@ jobs:
     if: ${{ github.repository != 'caltechlibrary/py-cli-template' }}
     runs-on: ubuntu-latest
     steps:
+      # For information about the github.* context variables available,
+      # see https://docs.github.com/en/actions/learn-github-actions/contexts
+
       - uses: actions/checkout@v2
         with:
           # by default, it uses a depth of 1
