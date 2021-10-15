@@ -37,7 +37,7 @@ jobs:
       - run: echo "USER=$(echo '${{ github.actor }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
         shell: bash
 
-      - run: echo "AUTHOR=\"$(curl https://api.github.com/users/${{ env.USER }} | jq '.name')\"" >> $GITHUB_ENV
+      - run: echo "AUTHOR=\"$(curl https://api.github.com/users/${{ github.actor }} | jq '.name')\"" >> $GITHUB_ENV
         shell: bash
         
       - run: echo "DESCRIPTION=\"$(curl https://api.github.com/repos/${{ github.repository}} | jq '.description')\"" >> $GITHUB_ENV
