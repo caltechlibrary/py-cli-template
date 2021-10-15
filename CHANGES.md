@@ -1,5 +1,5 @@
-# Change log for REPOSITORY
+# Change log for %PROJECT_NAME%
 
-## Version 0.0.0
+## Version 0.0.0 (%CREATION_DATE%)
 
-Project repository created.
+Project repository created by %AUTHOR_NAME%.

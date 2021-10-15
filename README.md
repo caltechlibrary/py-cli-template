@@ -1,10 +1,9 @@
-# Template for Python software projects
+# %PROJECT_NAME%
 
 This is a template README file for software repositories.  This first paragraph of the README should summarize your software in a concise fashion, preferably using no more than one or two sentences.
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg?style=flat-square)](https://choosealicense.com/licenses/bsd-3-clause)
-[![Latest release](https://img.shields.io/github/v/release/caltechlibrary/py-cli-template.svg?style=flat-square&color=b44e88)](https://github.com/caltechlibrary/py-cli-template/releases)
-[![DOI](https://data.caltech.edu/badge/201106666.svg)](https://data.caltech.edu/badge/latestdoi/201106666)
+[![Latest release](https://img.shields.io/github/v/release/caltechlibrary/%PROJECT_URLNAME%.svg?style=flat-square&color=b44e88)](https://github.com/caltechlibrary/%PROJECT_URLNAME%/releases)
 
 
 ## Table of contents
@@ -22,7 +21,7 @@ This is a template README file for software repositories.  This first paragraph 
 
 ## Introduction
 
-This repository is a GitHub template repository for creating software project repositories at the Caltech Library.  The [associated wiki page](https://github.com/caltechlibrary/py-cli-template/wiki/Using-this-template-repo) explains how to use the template repository.
+This repository is a GitHub template repository for creating software project repositories at the Caltech Library.  The [associated wiki page](https://github.com/caltechlibrary/%PROJECT_URLNAME%/wiki/Using-this-template-repo) explains how to use the template repository.
 
 This README file is in Markdown format, and is meant to provide a template for README files as well an illustration of what the README file can be expected to look like.  For a software project, this [Introduction](#introduction) section &ndash; which you are presently reading &ndash; should provide background for the project, a brief explanation of what the project is about, and optionally, pointers to resources that can help orient readers.  Ideally, this section should be short.
 
@@ -82,11 +81,9 @@ In this section, list the authors and contributors to your software project.  Ad
 
 This work was funded by the California Institute of Technology Library.
 
-(If this work was also supported by other organizations, acknowledge them here.  In addition, if your work relies on software libraries, or was inspired by looking at other work, it is appropriate to acknowledge this intellectual debt too.)
-
 <div align="center">
   <br>
   <a href="https://www.caltech.edu">
-    <img width="100" height="100" src="https://raw.githubusercontent.com/caltechlibrary/py-cli-template/main/.graphics/caltech-round.png">
+    <img width="100" height="100" src="https://raw.githubusercontent.com/caltechlibrary/%PROJECT_URLNAME%/main/.graphics/caltech-round.png">
   </a>
 </div>
