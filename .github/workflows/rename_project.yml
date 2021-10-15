@@ -52,6 +52,6 @@ jobs:
               
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Initial files from template"
+          commit_message: "File auto-generated from template"
           # commit_options: '--amend --no-edit'
           push_options: --force
