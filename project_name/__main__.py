@@ -1,5 +1,5 @@
 '''
-%PROJECT_NAME%: %PROJECT_DESCRIPTION%
+__main__.py: main function for %PROJECT_NAME%.
 
 Copyright
 ---------
