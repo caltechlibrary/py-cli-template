@@ -18,7 +18,7 @@ file "LICENSE" for more information.
 #  |    by the Makefile. Manual changes to these values will be lost.      |
 #  ╰────────────────────── Notice ── Notice ── Notice ─────────────────────╯
 
-__version__     = '0.0.1'
+__version__     = '0.0.0'
 __description__ = '%PROJECT_DESCRIPTION%'
 __url__         = 'https://github.com/caltechlibrary/%PROJECT_URLNAME%'
 __author__      = '%AUTHOR_NAME%'
