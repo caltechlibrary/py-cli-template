@@ -15,7 +15,7 @@ while getopts a:n:u:d: flag
 do
     case "${flag}" in
         a) author=${OPTARG};;
-        n) name=${OPTARG};;
+        n) project_name=${OPTARG};;
         u) urlname=${OPTARG};;
         d) description=${OPTARG};;
     esac
@@ -30,7 +30,7 @@ creation_year=$(date +"%Y")
 echo "Author name: $author"
 echo "Author first name: $first_name"
 echo "Author family name: $family_name"
-echo "Project name: $name"
+echo "Project name: $project_name"
 echo "Project URL name: $urlname"
 echo "Description: $description"
 echo "Creation date: $creation_date"
@@ -43,7 +43,7 @@ do
     sed -i "s/%AUTHOR_NAME%/$author/g" $filename
     sed -i "s/%AUTHOR_FIRST_NAME%/$first_name/g" $filename
     sed -i "s/%AUTHOR_FAMILY_NAME%/$family_name/g" $filename
-    sed -i "s/%PROJECT_NAME%/$name/g" $filename
+    sed -i "s/%PROJECT_NAME%/$project_name/g" $filename
     sed -i "s/%PROJECT_URLNAME%/$urlname/g" $filename
     sed -i "s/%PROJECT_DESCRIPTION%/$description/g" $filename
     sed -i "s/%CREATION_DATE%/$creation_date/g" $filename
@@ -51,7 +51,7 @@ do
     echo "Performed substitutions in $filename"
 done
 
-mv project_name $name
+mv project_name $project_name
 rm -f codemeta.json
 mv codemeta-TEMPLATE.json codemeta.json
 rm -f CITATION.cff
