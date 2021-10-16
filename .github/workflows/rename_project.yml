@@ -12,12 +12,12 @@
 #  - does not change dashes to underscores in project names
 # =============================================================================
 
-name: Rename the project from template
+name: Rename project files and make file substitutions
 
 on: [push]
 
 jobs:
-  rename-project:
+  Rename-and-replace:
     if: ${{ github.repository != 'caltechlibrary/py-cli-template' }}
     runs-on: ubuntu-latest
     steps:
@@ -47,7 +47,7 @@ jobs:
         id: is_template
         run: echo "::set-output name=is_template::$(ls .github/template.yml &> /dev/null && echo true || echo false)"
 
-      - name: Rename the project
+      - name: Rename files and substitute variables
         if: steps.is_template.outputs.is_template == 'true'
         run: |
           echo "Performing substitutions"
@@ -56,5 +56,4 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Initial commit"
-          # commit_options: '--amend --no-edit'
           push_options: --force
