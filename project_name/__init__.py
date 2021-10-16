@@ -9,9 +9,8 @@ is open-source software released under a 3-clause BSD license.  Please see the
 file "LICENSE" for more information.
 '''
 
-# Package metadata ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#
-# This is set of variables is to identify the Python software package.
+# Package metadata
+# .............................................................................
 #
 #  ╭────────────────────── Notice ── Notice ── Notice ─────────────────────╮
 #  |    The following values are automatically updated at every release    |
@@ -25,7 +24,7 @@ __author__      = '%AUTHOR_NAME%'
 __email__       = 'helpdesk@library.caltech.edu'
 __license__     = 'BSD 3-clause'
 
-
+
 # Miscellaneous utilities.
 # .............................................................................
 
