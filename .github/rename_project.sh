@@ -21,19 +21,28 @@ do
     esac
 done
 
-echo "Author name: $author";
-echo "Project name: $name";
-echo "Project URL name: $urlname";
-echo "Description: $description";
-
-echo "Renaming project..."
+first_name=$(echo $author | /usr/bin/awk '{print $1}' | tr -d '"')
+family_name=$(echo $author | /usr/bin/awk '{print $NF}' | tr -d '"')
 
 creation_date=$(date +"%Y-%m-%d")
 creation_year=$(date +"%Y")
 
+echo "Author name: $author"
+echo "Author first name: $first_name"
+echo "Author family name: $family_name"
+echo "Project name: $name"
+echo "Project URL name: $urlname"
+echo "Description: $description"
+echo "Creation date: $creation_date"
+echo "Creation year: $creation_year"
+
+echo "Renaming project ..."
+
 for filename in $(git ls-files)
 do
     sed -i "s/%AUTHOR_NAME%/$author/g" $filename
+    sed -i "s/%AUTHOR_FIRST_NAME%/$first_name/g" $filename
+    sed -i "s/%AUTHOR_FAMILY_NAME%/$family_name/g" $filename
     sed -i "s/%PROJECT_NAME%/$name/g" $filename
     sed -i "s/%PROJECT_URLNAME%/$urlname/g" $filename
     sed -i "s/%PROJECT_DESCRIPTION%/$description/g" $filename
@@ -50,3 +59,5 @@ mv CITATION-TEMPLATE.cff CITATION.cff
 
 # This command runs only once on GHA!
 rm -rf .github/template.yml
+
+echo "Renaming project ... Done."

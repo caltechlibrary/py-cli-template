@@ -1,7 +1,7 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
-  "description": "%PROJECT_DESCRIPTION",
+  "description": "%PROJECT_DESCRIPTION%",
   "name": "%PROJECT_NAME%",
   "codeRepository": "https://github.com/caltechlibrary/%PROJECT_URLNAME%",
   "issueTracker": "https://github.com/caltechlibrary/%PROJECT_URLNAME%/issues",
@@ -10,8 +10,8 @@
   "author": [
     {
       "@type": "Person",
-      "givenName": "FIRSTNAME",
-      "familyName": "LASTNAME",
+      "givenName": "%AUTHOR_FIRST_NAME%",
+      "familyName": "%AUTHOR_FAMILY_NAME%",
       "affiliation": "California Institute of Technology Library",
       "email": "EMAIL",
       "@id": "https://orcid.org/YOUR-ORCID"
