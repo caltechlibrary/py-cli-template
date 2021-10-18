@@ -30,9 +30,10 @@ if __debug__:
 @plac.annotations(
     version    = ('print version info and exit',                'flag',   'V'),
     debug      = ('log debug output to "OUT" ("-" is console)', 'option', '@'),
+    args       = 'arguments'
 )
 
-def main(version = False, debug = 'OUT'):
+def main(version = False, debug = 'OUT', *args):
     '''%PROJECT_DESCRIPTION%'''
 
     # Set up debug logging as soon as possible, if requested ------------------
