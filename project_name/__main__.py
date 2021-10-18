@@ -17,6 +17,8 @@ if sys.version_info <= (3, 8):
           str(sys.version_info.major) + '.' + str(sys.version_info.minor) + '.')
     exit(1)
 
+import plac
+
 if __debug__:
     from sidetrack import set_debug, log
 
