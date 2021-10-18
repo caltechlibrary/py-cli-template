@@ -73,4 +73,8 @@ def console_scripts_main():
 
 # The following allows users to invoke this using "python3 -m handprint".
 if __name__ == '__main__':
-    plac.call(main)
+    # Print help if the user supplied no command-line arguments.
+    if len(sys.argv) == 1 or (len(sys.argv) > 1 and sys.argv[1] == 'help'):
+        plac.call(main, ['-h'])
+    else:
+        plac.call(main)
