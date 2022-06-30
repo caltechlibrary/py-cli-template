@@ -10,17 +10,14 @@ file "LICENSE" for more information.
 '''
 
 import sys
-from   sys import exit as exit
 if sys.version_info <= (3, 8):
     print('%PROJECT_NAME% requires Python version 3.8 or higher,')
     print('but the current version of Python is ' +
           str(sys.version_info.major) + '.' + str(sys.version_info.minor) + '.')
-    exit(1)
+    sys.exit(1)
 
 import plac
-
-if __debug__:
-    from sidetrack import set_debug, log
+from   sidetrack import set_debug, log
 
 
 # Main program.
@@ -39,30 +36,44 @@ def main(version = False, debug = 'OUT', *args):
     # Set up debug logging as soon as possible, if requested ------------------
 
     if debug != 'OUT':
-        if __debug__: set_debug(True, debug)
-        import faulthandler
-        faulthandler.enable()
-        if not sys.platform.startswith('win'):
-            import signal
-            from boltons.debugutils import pdb_on_signal
-            pdb_on_signal(signal.SIGUSR1)
+        config_debug(debug)
     else:
         debug = False
 
     # Preprocess arguments and handle early exits -----------------------------
 
     if version:
-        from %PROJECT_NAME% import print_version
-        print_version()
-        exit()
+        print_version_info()
+        sys.exit()
 
-    # See the
-    # for information about how to work with the command-line arguments.
+    # ... PROCESS OTHER ARGS HERE ...
+
+    # Do the real work --------------------------------------------------------
+
+    # ... YOUR MAIN CODE HERE ...
 
 
-   # Do the real work --------------------------------------------------------
+
+# Miscellaneous helper functions.
+# .............................................................................
+
+def config_debug(debug_arg):
+    set_debug(True, debug_arg)
+    import faulthandler
+    faulthandler.enable()
+    import os
+    if os.name != 'nt':                 # Can't use next part on Windows.
+        import signal
+        from boltons.debugutils import pdb_on_signal
+        pdb_on_signal(signal.SIGUSR1)
 
 
+def print_version_info():
+    # Precaution: add parent dir in case user is running from our source dir.
+    from os import path
+    sys.path.append(path.join(path.dirname(path.abspath(__file__)), '..'))
+    from refoliate import print_version
+    print_version()
 
 
 # Main entry point.
@@ -73,6 +84,7 @@ def main(version = False, debug = 'OUT', *args):
 # function that takes zero arguments.
 def console_scripts_main():
     plac.call(main)
+
 
 # The following allows users to invoke this using "python3 -m handprint".
 if __name__ == '__main__':
