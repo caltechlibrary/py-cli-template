@@ -2,7 +2,7 @@
 
 %PROJECT_DESCRIPTION%.
 
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg?style=flat-square)](https://choosealicense.com/licenses/bsd-3-clause)
+[![License](https://img.shields.io/badge/License-BSD--like-lightgrey.svg?style=flat-square)](https://github.com/caltechlibrary/%PROJECT_URLNAME%/LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/caltechlibrary/%PROJECT_URLNAME%.svg?style=flat-square&color=b44e88)](https://github.com/caltechlibrary/%PROJECT_URLNAME%/releases)
 
 
@@ -67,7 +67,7 @@ This section is optional; if your repository is for a project that accepts open-
 
 ## License
 
-Software produced by the Caltech Library is Copyright © %CREATION_YEAR% California Institute of Technology.  This software is freely distributed under a BSD/MIT type license.  Please see the [LICENSE](LICENSE) file for more information.
+Software produced by the Caltech Library is Copyright © %CREATION_YEAR% California Institute of Technology.  This software is freely distributed under a BSD-style license.  Please see the [LICENSE](LICENSE) file for more information.
 
 
 ## Authors and history
