@@ -5,7 +5,7 @@ Copyright
 ---------
 
 Copyright (c) %CREATION_YEAR% by the California Institute of Technology.  This code
-is open-source software released under a 3-clause BSD license.  Please see the
+is open-source software released under a BSD-type license.  Please see the
 file "LICENSE" for more information.
 '''
 
@@ -22,7 +22,7 @@ __description__ = '%PROJECT_DESCRIPTION%'
 __url__         = 'https://github.com/caltechlibrary/%PROJECT_URLNAME%'
 __author__      = '%AUTHOR_NAME%'
 __email__       = 'helpdesk@library.caltech.edu'
-__license__     = 'BSD 3-clause'
+__license__     = 'https://data.caltech.edu/license'
 
 
 # Miscellaneous utilities.

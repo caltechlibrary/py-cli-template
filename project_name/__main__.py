@@ -5,7 +5,7 @@ Copyright
 ---------
 
 Copyright (c) %CREATION_YEAR% by the California Institute of Technology.  This code
-is open-source software released under a 3-clause BSD license.  Please see the
+is open-source software released under a BSD-type license.  Please see the
 file "LICENSE" for more information.
 '''
 
@@ -46,6 +46,8 @@ def main(version = False, debug = 'OUT', *args):
             import signal
             from boltons.debugutils import pdb_on_signal
             pdb_on_signal(signal.SIGUSR1)
+    else:
+        debug = False
 
     # Preprocess arguments and handle early exits -----------------------------
 
