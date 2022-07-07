@@ -254,10 +254,12 @@ clean-other:;
 	rm -fr __pycache__ $(name)/__pycache__ .eggs
 	rm -rf .cache
 
-.PHONY: release release-on-github update-init update-meta update-citation \
-	print-instructions packages clean test-pypi pypi extra-files \
-	clean clean-dist clean-build clean-release clean-other \
-	really-clean really-clean-dist really-clean-build completely-clean
+.PHONY: help vars report release test-branch \
+	update-init update-meta update-citation commit-updates \
+	release-on-github print-instructions update-doi \
+	packages test-pypi pypi clean really-clean completely-clean \
+	clean-dist really-clean-dist clean-build really-clean-build \
+	clean-release clean-other
 
 .SILENT: clean clean-dist clean-build clean-release clean-other really-clean \
 	really-clean-dist really-clean-build completely-clean
