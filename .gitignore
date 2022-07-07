@@ -74,6 +74,7 @@ __pycache__/
 *$py.class
 *.egg-info/
 .eggs/
+.pytest_cache
 
 # InnoSetup-specific things to ignore:
 # .............................................................................
