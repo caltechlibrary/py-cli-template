@@ -36,3 +36,8 @@ ignore =
     # line breaks *should* come before a binary operator, but as of version 4,
     # Flake8 still flags the breaks as bad. So:
     W503
+
+per-file-ignores =
+    # The plac.annotations lines contain hand-aligned text, which triggers
+    # flake8's check for spaces after commas.
+    %PROJECT_NAME%/__main__.py: E241, E304, E402
