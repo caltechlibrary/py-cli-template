@@ -23,7 +23,7 @@ endif
 # The following is based on the approach posted by Jonathan Ben-Avraham to
 # Stack Overflow in 2014 at https://stackoverflow.com/a/25668869
 
-programs_needed = curl gh git jq sed
+programs_needed = awk curl gh git jq sed python3
 TEST := $(foreach p,$(programs_needed),\
 	  $(if $(shell which $(p)),_,$(error Cannot find program "$(p)")))
 
@@ -63,6 +63,9 @@ help:
 	@echo ''
 	@echo 'make test'
 	@echo '  Run pytest.'
+	@echo ''
+	@echo 'make install'
+	@echo '  Install the project in dev mode.'
 	@echo ''
 	@echo 'make release'
 	@echo '  Do a release on GitHub. This will push changes to GitHub,'
@@ -141,6 +144,12 @@ lint:
 
 test: lint
 	pytest -v --cov=%PROJECT_NAME% -l tests/
+
+
+# make install ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+install:
+	python3 install -e .[dev]
 
 
 # make release ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -268,6 +277,7 @@ clean-release:;
 clean-other:;
 	rm -fr __pycache__ $(name)/__pycache__ .eggs
 	rm -rf .cache
+	rm -rf .pytest_cache
 
 .PHONY: help vars report release test-branch \
 	update-init update-meta update-citation commit-updates \
