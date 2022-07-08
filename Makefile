@@ -142,7 +142,7 @@ report: vars
 lint:
 	flake8 %PROJECT_NAME%
 
-test: lint
+test tests: lint
 	pytest -v --cov=%PROJECT_NAME% -l tests/
 
 
