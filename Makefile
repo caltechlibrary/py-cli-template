@@ -260,7 +260,7 @@ completely-clean: really-clean clean-other
 	rm -rf build dist
 
 clean-dist: vars
-	rm -fr $(distdir)/$(name) dist/$(name)-$(version)-py3-none-any.whl
+	rm -fr $(distdir)/$(name) $(distdir)/$(name)-$(version)-py3-none-any.whl
 
 really-clean-dist:;
 	rm -fr $(distdir)
