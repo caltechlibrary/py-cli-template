@@ -13,6 +13,7 @@
 
 from setuptools import setup
 
+
 def requirements(file):
     from os import path
     required = []
@@ -32,6 +33,7 @@ def requirements(file):
                 # No pip, or not the expected version. Give up & return as-is.
                 pass
     return required
+
 
 setup(
     setup_requires=['wheel'],
