@@ -64,6 +64,7 @@ def config_debug(debug_arg):
         import signal
         from boltons.debugutils import pdb_on_signal
         pdb_on_signal(signal.SIGUSR1)
+        log(f'installed signal handler on {signal.SIGUSR1}')
 
 
 def print_version_info():
