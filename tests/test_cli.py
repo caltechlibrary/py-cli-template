@@ -1,12 +1,12 @@
-from os import path
-import plac
-import sys
+# =============================================================================
+# @file    test_cli.py
+# @brief   Py.test cases for module command-line interface
+# @created %CREATION_DATE%
+# @license Please see the file named LICENSE in the project directory
+# @website https://github.com/caltechlibrary/%PROJECT_NAME%
+# =============================================================================
 
-try:
-    thisdir = path.dirname(path.abspath(__file__))
-    sys.path.append(path.join(thisdir, '..'))
-except Exception:                       # noqa: PIE786
-    sys.path.append('..')
+import plac
 
 
 def test_usage_help(capsys):

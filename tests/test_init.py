@@ -1,12 +1,10 @@
-from os import path
-import sys
-
-try:
-    thisdir = path.dirname(path.abspath(__file__))
-    sys.path.append(path.join(thisdir, '..'))
-except Exception:                       # noqa: PIE786
-    sys.path.append('..')
-
+# =============================================================================
+# @file    test_init.py
+# @brief   Py.test cases for module __init__.py file
+# @created %CREATION_DATE%
+# @license Please see the file named LICENSE in the project directory
+# @website https://github.com/caltechlibrary/%PROJECT_NAME%
+# =============================================================================
 
 def test_version():
     """Test version import."""
