@@ -62,5 +62,8 @@ jobs:
 
       - name: Print GITHUB_ENV in case needed for debugging.
         shell: bash
+        env:
+          # Setting this variable puts it into the GITHUB_ENV printed below.
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: |
           echo "$GITHUB_ENV"
