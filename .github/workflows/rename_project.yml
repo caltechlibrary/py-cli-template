@@ -31,10 +31,10 @@ jobs:
           # Token needs to be set in order to use the GitHub CLI `gh` program.
           GH_TOKEN: ${{ github.token }}
         run: |
-          echo "NAME=$(gh repo view --json name -q .name | tr '[:upper:]' '[:lower:]')"     >> $GITHUB_ENV
-          echo "URLNAME=$(gh repo view --json name -q .name)"                               >> $GITHUB_ENV
-          echo "AUTHOR=$(gh api https://api.github.com/users/${{ github.actor }} -q .name)" >> $GITHUB_ENV
-          echo "DESCRIPTION=$(gh repo view --json description -q .description)"             >> $GITHUB_ENV
+          echo NAME="$(gh repo view --json name -q .name | tr '[:upper:]' '[:lower:]')"     >> $GITHUB_ENV
+          echo URLNAME="$(gh repo view --json name -q .name)"                               >> $GITHUB_ENV
+          echo AUTHOR="$(gh api https://api.github.com/users/${{ github.actor }} -q .name)" >> $GITHUB_ENV
+          echo DESCRIPTION="$(gh repo view --json description -q .description)"             >> $GITHUB_ENV
 
       - name: Test that this is a repo based on our template.
         id: check_template
