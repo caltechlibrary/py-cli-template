@@ -1,9 +1,9 @@
 # %PROJECT_NAME%
 
-%PROJECT_DESCRIPTION%.
+%PROJECT_DESCRIPTION%
 
-[![License](https://img.shields.io/badge/License-BSD--like-lightgrey.svg?style=flat-square)](https://github.com/caltechlibrary/%PROJECT_URLNAME%/LICENSE)
-[![Latest release](https://img.shields.io/github/v/release/caltechlibrary/%PROJECT_URLNAME%.svg?style=flat-square&color=b44e88)](https://github.com/caltechlibrary/%PROJECT_URLNAME%/releases)
+[![License](https://img.shields.io/badge/License-BSD--like-lightgrey.svg)](https://github.com/caltechlibrary/%PROJECT_URLNAME%/LICENSE)
+[![Latest release](https://img.shields.io/github/v/release/caltechlibrary/%PROJECT_URLNAME%.svg?color=b44e88)](https://github.com/caltechlibrary/%PROJECT_URLNAME%/releases)
 
 
 ## Table of contents
