@@ -47,7 +47,7 @@ jobs:
         shell: bash
         run: |
           echo "Performing substitutions."
-          .github/rename_project.sh -a ${{ env.AUTHOR }} -n ${{ env.NAME }} -u ${{ env.URLNAME }} -d ${{ env.DESCRIPTION }}
+          .github/rename_project.sh -a "${{ env.AUTHOR }}" -n "${{ env.NAME }}" -u "${{ env.URLNAME }}" -d "${{ env.DESCRIPTION }}"
 
       - name: Clean up.
         shell: bash
