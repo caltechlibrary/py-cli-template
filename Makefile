@@ -6,8 +6,8 @@
 # @website https://github.com/caltechlibrary/%PROJECT_URLNAME%
 # =============================================================================
 
-.ONESHELL: 				# Run all commands in the same shell.
-.SHELLFLAGS += -e			# Exit at the first error.
+.ONESHELL:                              # Run all commands in the same shell.
+.SHELLFLAGS += -e                       # Exit at the first error.
 
 # This Makefile uses syntax that needs at least GNU Make version 3.82.
 # The following test is based on the approach posted by Eldar Abusalimov to
@@ -30,16 +30,16 @@ TEST := $(foreach p,$(programs_needed),\
 # Set some basic variables.  These are quick to set; we set additional
 # variables using "set-vars" but only when the others are needed.
 
-name	 := $(strip $(shell awk -F "=" '/^name/ {print $$2}' setup.cfg))
-version	 := $(strip $(shell awk -F "=" '/^version/ {print $$2}' setup.cfg))
-url	 := $(strip $(shell awk -F "=" '/^url/ {print $$2}' setup.cfg))
-desc	 := $(strip $(shell awk -F "=" '/^description / {print $$2}' setup.cfg))
-author	 := $(strip $(shell awk -F "=" '/^author / {print $$2}' setup.cfg))
-email	 := $(strip $(shell awk -F "=" '/^author_email/ {print $$2}' setup.cfg))
-license	 := $(strip $(shell awk -F "=" '/^license / {print $$2}' setup.cfg))
+name     := $(strip $(shell awk -F "=" '/^name/ {print $$2}' setup.cfg))
+version  := $(strip $(shell awk -F "=" '/^version/ {print $$2}' setup.cfg))
+url      := $(strip $(shell awk -F "=" '/^url/ {print $$2}' setup.cfg))
+desc     := $(strip $(shell awk -F "=" '/^description / {print $$2}' setup.cfg))
+author   := $(strip $(shell awk -F "=" '/^author / {print $$2}' setup.cfg))
+email    := $(strip $(shell awk -F "=" '/^author_email/ {print $$2}' setup.cfg))
+license  := $(strip $(shell awk -F "=" '/^license / {print $$2}' setup.cfg))
 platform := $(strip $(shell python3 -c 'import sys; print(sys.platform)'))
-os	 := $(subst $(platform),darwin,macos)
-branch	 := $(shell git rev-parse --abbrev-ref HEAD)
+os       := $(subst $(platform),darwin,macos)
+branch   := $(shell git rev-parse --abbrev-ref HEAD)
 initfile := $(name)/__init__.py
 distdir  := dist/$(os)
 builddir := build/$(os)
@@ -106,35 +106,35 @@ help:
 
 .SILENT: vars
 vars:
-	$(info Gathering data -- this takes a few moments ...)
-	$(eval repo	 := $(strip $(shell gh repo view | head -1 | cut -f2 -d':')))
-	$(eval api_url   := https://api.github.com)
-	$(eval id	 := $(shell curl -s $(api_url)/repos/$(repo) | jq '.id'))
-	$(eval id_url	 := https://data.caltech.edu/badge/latestdoi/$(id))
-	$(eval doi_url	 := $(shell curl -sILk $(id_url) | grep Locat | cut -f2 -d' '))
-	$(eval doi	 := $(subst https://doi.org/,,$(doi_url)))
-	$(eval doi_tail  := $(lastword $(subst ., ,$(doi))))
-	$(info Gathering data -- this takes a few moments ... Done.)
+        $(info Gathering data -- this takes a few moments ...)
+        $(eval repo      := $(strip $(shell gh repo view | head -1 | cut -f2 -d':')))
+        $(eval api_url   := https://api.github.com)
+        $(eval id        := $(shell curl -s $(api_url)/repos/$(repo) | jq '.id'))
+        $(eval id_url    := https://data.caltech.edu/badge/latestdoi/$(id))
+        $(eval doi_url   := $(shell curl -sILk $(id_url) | grep Locat | cut -f2 -d' '))
+        $(eval doi       := $(subst https://doi.org/,,$(doi_url)))
+        $(eval doi_tail  := $(lastword $(subst ., ,$(doi))))
+        $(info Gathering data -- this takes a few moments ... Done.)
 
 report: vars
-	@echo os	= $(os)
-	@echo name	= $(name)
-	@echo version	= $(version)
-	@echo url	= $(url)
-	@echo desc	= $(desc)
-	@echo author	= $(author)
-	@echo email	= $(email)
-	@echo license	= $(license)
-	@echo branch	= $(branch)
-	@echo repo	= $(repo)
-	@echo id	= $(id)
-	@echo id_url	= $(id_url)
-	@echo doi_url	= $(doi_url)
-	@echo doi	= $(doi)
-	@echo doi_tail	= $(doi_tail)
-	@echo initfile  = $(initfile)
-	@echo distdir	= $(distdir)
-	@echo builddir	= $(builddir)
+        @echo os        = $(os)
+        @echo name      = $(name)
+        @echo version   = $(version)
+        @echo url       = $(url)
+        @echo desc      = $(desc)
+        @echo author    = $(author)
+        @echo email     = $(email)
+        @echo license   = $(license)
+        @echo branch    = $(branch)
+        @echo repo      = $(repo)
+        @echo id        = $(id)
+        @echo id_url    = $(id_url)
+        @echo doi_url   = $(doi_url)
+        @echo doi       = $(doi)
+        @echo doi_tail  = $(doi_tail)
+        @echo initfile  = $(initfile)
+        @echo distdir   = $(distdir)
+        @echo builddir  = $(builddir)
 
 
 # make lint & make test ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -162,12 +162,12 @@ ifneq ($(branch),main)
 endif
 
 update-init: vars
-	@sed -i .bak -e "s|^\(__version__ *=\).*|\1 '$(version)'|"  $(initfile)
-	@sed -i .bak -e "s|^\(__description__ *=\).*|\1 '$(desc)'|" $(initfile)
-	@sed -i .bak -e "s|^\(__url__ *=\).*|\1 '$(url)'|"	    $(initfile)
-	@sed -i .bak -e "s|^\(__author__ *=\).*|\1 '$(author)'|"    $(initfile)
-	@sed -i .bak -e "s|^\(__email__ *=\).*|\1 '$(email)'|"	    $(initfile)
-	@sed -i .bak -e "s|^\(__license__ *=\).*|\1 '$(license)'|"  $(initfile)
+        @sed -i .bak -e "s|^\(__version__ *=\).*|\1 '$(version)'|"  $(initfile)
+        @sed -i .bak -e "s|^\(__description__ *=\).*|\1 '$(desc)'|" $(initfile)
+        @sed -i .bak -e "s|^\(__url__ *=\).*|\1 '$(url)'|"          $(initfile)
+        @sed -i .bak -e "s|^\(__author__ *=\).*|\1 '$(author)'|"    $(initfile)
+        @sed -i .bak -e "s|^\(__email__ *=\).*|\1 '$(email)'|"      $(initfile)
+        @sed -i .bak -e "s|^\(__license__ *=\).*|\1 '$(license)'|"  $(initfile)
 
 update-meta: vars
 	@sed -i .bak -e "/version/ s/[0-9].[0-9][0-9]*.[0-9][0-9]*/$(version)/" codemeta.json
