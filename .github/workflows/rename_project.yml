@@ -59,3 +59,17 @@ jobs:
         with:
           commit_message: "Initial commit"
           push_options: --force
+
+      - name: Print GITHUB_ENV and GITHUB_CONTEXT in case needed for debugging.
+        shell: bash
+        env:
+          # Setting this variable and then printing it below is not strictly
+          # necessary; you could put the expression directly into the echo
+          # command below. But when I do that, I get a doubling of the output.
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: |
+          echo "====================="
+          echo "$GITHUB_ENV"
+          echo "====================="
+          echo "$GITHUB_CONTEXT"
+          echo "====================="
