@@ -34,6 +34,7 @@ jobs:
           echo NAME="$(gh repo view --json name -q .name | tr '[:upper:]' '[:lower:]')"     >> $GITHUB_ENV
           echo URLNAME="$(gh repo view --json name -q .name)"                               >> $GITHUB_ENV
           echo AUTHOR="$(gh api https://api.github.com/users/${{ github.actor }} -q .name)" >> $GITHUB_ENV
+          echo EMAIL="$(gh api https://api.github.com/users/${{ github.actor }} -q .email)" >> $GITHUB_ENV
           echo DESCRIPTION="$(gh repo view --json description -q .description)"             >> $GITHUB_ENV
 
       - name: Test that this is a repo based on our template.
@@ -47,7 +48,7 @@ jobs:
         shell: bash
         run: |
           echo "Performing substitutions."
-          .github/rename_project.sh -a "${{ env.AUTHOR }}" -n "${{ env.NAME }}" -u "${{ env.URLNAME }}" -d "${{ env.DESCRIPTION }}"
+          .github/rename_project.sh -a "${{ env.AUTHOR }}" -e "${{ env.EMAIL }}" -n "${{ env.NAME }}" -u "${{ env.URLNAME }}" -d "${{ env.DESCRIPTION }}"
 
       - name: Clean up.
         shell: bash

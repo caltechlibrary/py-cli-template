@@ -11,10 +11,11 @@
 # The original file was copied on 2021-10-14.
 # =============================================================================
 
-while getopts a:n:u:d: flag
+while getopts a:e:n:u:d: flag
 do
     case "${flag}" in
         a) author=${OPTARG};;
+        e) email=${OPTARG};;
         n) project_name=${OPTARG};;
         u) urlname=${OPTARG};;
         d) description=${OPTARG};;
@@ -30,6 +31,7 @@ creation_year=$(date +"%Y")
 echo "Author name: $author"
 echo "Author first name: $first_name"
 echo "Author family name: $family_name"
+echo "Author email: $email"
 echo "Project name: $project_name"
 echo "Project URL name: $urlname"
 echo "Description: $description"
@@ -41,6 +43,7 @@ echo "Renaming project ..."
 for filename in $(git ls-files)
 do
     sed -i "s/%AUTHOR_NAME%/$author/g" $filename
+    sed -i "s/%AUTHOR_EMAIL%/$email/g" $filename
     sed -i "s/%AUTHOR_FIRST_NAME%/$first_name/g" $filename
     sed -i "s/%AUTHOR_FAMILY_NAME%/$family_name/g" $filename
     sed -i "s/%PROJECT_NAME%/$project_name/g" $filename

@@ -13,7 +13,7 @@
       "givenName": "%AUTHOR_FIRST_NAME%",
       "familyName": "%AUTHOR_FAMILY_NAME%",
       "affiliation": "California Institute of Technology Library",
-      "email": "EMAIL",
+      "email": "%AUTHOR_EMAIL%",
       "@id": "https://orcid.org/YOUR-ORCID"
     }],
   "developmentStatus": "active",
