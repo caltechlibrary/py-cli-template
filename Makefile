@@ -168,12 +168,12 @@ ifneq ($(branch),main)
 endif
 
 update-init: vars
-        @sed -i .bak -e "s|^\(__version__ *=\).*|\1 '$(version)'|"  $(initfile)
-        @sed -i .bak -e "s|^\(__description__ *=\).*|\1 '$(desc)'|" $(initfile)
-        @sed -i .bak -e "s|^\(__url__ *=\).*|\1 '$(url)'|"          $(initfile)
-        @sed -i .bak -e "s|^\(__author__ *=\).*|\1 '$(author)'|"    $(initfile)
-        @sed -i .bak -e "s|^\(__email__ *=\).*|\1 '$(email)'|"      $(initfile)
-        @sed -i .bak -e "s|^\(__license__ *=\).*|\1 '$(license)'|"  $(initfile)
+	@sed -i .bak -e "s|^\(__version__ *=\).*|\1 '$(version)'|"  $(initfile)
+	@sed -i .bak -e "s|^\(__description__ *=\).*|\1 '$(desc)'|" $(initfile)
+	@sed -i .bak -e "s|^\(__url__ *=\).*|\1 '$(url)'|"	    $(initfile)
+	@sed -i .bak -e "s|^\(__author__ *=\).*|\1 '$(author)'|"    $(initfile)
+	@sed -i .bak -e "s|^\(__email__ *=\).*|\1 '$(email)'|"	    $(initfile)
+	@sed -i .bak -e "s|^\(__license__ *=\).*|\1 '$(license)'|"  $(initfile)
 
 update-meta: vars
 	@sed -i .bak -e "/version/ s/[0-9].[0-9][0-9]*.[0-9][0-9]*/$(version)/" codemeta.json
