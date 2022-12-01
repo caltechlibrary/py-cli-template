@@ -25,7 +25,7 @@ from   sidetrack import set_debug, log
 
 # For more info about how plac works see https://plac.readthedocs.io/en/latest/
 @plac.annotations(
-    version    = ('print version info and exit',                'flag',   'V'),
+    version    = ('print version info and exit'               , 'flag'  , 'V'),
     debug      = ('log debug output to "OUT" ("-" is console)', 'option', '@'),
     args       = 'arguments'
 )
