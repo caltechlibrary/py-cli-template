@@ -32,12 +32,19 @@ ignore =
     # Sometimes it's more readable to omit spaces around operators and colons.
     E203,
     E226,
+    # E402 = "module level import not at top of file". However, for responsive
+    # scripts, you want to use lazy imports (meaning, import things when you
+    # need them and not at the top of the file), which violates this rule.
+    E402,
     # According to Flake8 docs at https://www.flake8rules.com/rules/W503.html
     # line breaks *should* come before a binary operator, but as of version 4,
     # Flake8 still flags the breaks as bad. So:
     W503
 
 per-file-ignores =
-    # The plac.annotations lines contain hand-aligned text, which triggers
-    # flake8's check for spaces after commas.
-    %PROJECT_NAME%/__main__.py: E241, E304, E402
+    # The @plac line in __main__.py is more readable if you align the equals
+    # signs, which runs counter to E251 ("unexpected spaces around
+    # keyword/parameter equals"). It would be better to disable E251 just for
+    # that block in the file, BUT flake8 only recognizes per-line annotations
+    # there's no way to tell it to ignore a rule for a block of code. So:
+    %PROJECT_NAME%/__main__.py: E251
