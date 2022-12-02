@@ -110,15 +110,15 @@ help:
 
 .SILENT: vars
 vars:
-        $(info Gathering data -- this takes a few moments ...)
-        $(eval repo      := $(strip $(shell gh repo view | head -1 | cut -f2 -d':')))
-        $(eval api_url   := https://api.github.com)
-        $(eval id        := $(shell curl -s $(api_url)/repos/$(repo) | jq '.id'))
-        $(eval id_url    := https://data.caltech.edu/badge/latestdoi/$(id))
-        $(eval doi_url   := $(shell curl -sILk $(id_url) | grep Locat | cut -f2 -d' '))
-        $(eval doi       := $(subst https://doi.org/,,$(doi_url)))
-        $(eval doi_tail  := $(lastword $(subst ., ,$(doi))))
-        $(info Gathering data -- this takes a few moments ... Done.)
+	$(info Gathering data -- this takes a few moments ...)
+	$(eval repo	 := $(strip $(shell gh repo view | head -1 | cut -f2 -d':')))
+	$(eval api_url	 := https://api.github.com)
+	$(eval id	 := $(shell curl -s $(api_url)/repos/$(repo) | jq '.id'))
+	$(eval id_url	 := https://data.caltech.edu/badge/latestdoi/$(id))
+	$(eval doi_url	 := $(shell curl -sILk $(id_url) | grep Locat | cut -f2 -d' '))
+	$(eval doi	 := $(subst https://doi.org/,,$(doi_url)))
+	$(eval doi_tail	 := $(lastword $(subst ., ,$(doi))))
+	$(info Gathering data -- this takes a few moments ... Done.)
 
 # Note: the seemingly-misaligned equals signs in the code below are not really
 # misaligned; it's adjusted for differences in tabs & spaces in the output.
