@@ -22,11 +22,11 @@ authors:
     given-names: Tommy
     family-names: Keswick
     orcid: "https://orcid.org/0000-0001-5644-440X"
-version: "1.7.1"
+version: "1.8.0"
 abstract: "GitHub template project for non-web Python application projects"
 repository-code: "https://github.com/caltechlibrary/py-cli-template"
 type: software
 license-url: "https://github.com/caltechlibrary/py-cli-template/blob/main/LICENSE"
 keywords: 
   - template
-date-released: "2022-12-02"
+date-released: "2022-12-06"
