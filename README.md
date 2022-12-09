@@ -49,7 +49,7 @@
 
 ## Getting help
 
-If you find an issue, please submit it in [the GitHub issue tracker](https://github.com/caltechlibrary/%PROJECT_NAME%/issues) for this repository.
+If you find an issue, please submit it in [the GitHub issue tracker](https://github.com/caltechlibrary/%PROJECT_URLNAME%/issues) for this repository.
 
 
 ## Contributing
