@@ -71,7 +71,7 @@ def print_version_info():
     # Precaution: add parent dir in case user is running from our source dir.
     from os import path
     sys.path.append(path.join(path.dirname(path.abspath(__file__)), '..'))
-    from refoliate import print_version
+    from %PROJECT_NAME% import print_version
     print_version()
 
 
@@ -85,7 +85,7 @@ def console_scripts_main():
     plac.call(main)
 
 
-# The following allows users to invoke this using "python3 -m handprint".
+# The following allows users to invoke this using "python3 -m %PROJECT_NAME%".
 if __name__ == '__main__':
     # Print help if the user supplied no command-line arguments.
     if len(sys.argv) == 1 or (len(sys.argv) > 1 and sys.argv[1] == 'help'):
