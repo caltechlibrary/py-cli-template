@@ -1,5 +1,5 @@
 '''
-__main__.py: main function for %PROJECT_NAME%.
+__main__.py: main function for %MODULE_NAME%.
 
 Copyright
 ---------
@@ -11,7 +11,7 @@ file "LICENSE" for more information.
 
 import sys
 if sys.version_info <= (3, 8):
-    print('%PROJECT_NAME% requires Python version 3.8 or higher,')
+    print('%MODULE_NAME% requires Python version 3.8 or higher,')
     print('but the current version of Python is ' + str(sys.version_info.major)
           + '.' + str(sys.version_info.minor) + '.')
     sys.exit(1)
@@ -30,7 +30,7 @@ from   sidetrack import set_debug, log
     args       = 'arguments'
 )
 def main(version=False, debug='OUT', *args):
-    '''%PROJECT_DESCRIPTION%'''
+    '''%DESCRIPTION%'''
 
     # Set up debug logging as soon as possible, if requested ------------------
 
@@ -71,7 +71,7 @@ def print_version_info():
     # Precaution: add parent dir in case user is running from our source dir.
     from os import path
     sys.path.append(path.join(path.dirname(path.abspath(__file__)), '..'))
-    from %PROJECT_NAME% import print_version
+    from %MODULE_NAME% import print_version
     print_version()
 
 
@@ -85,7 +85,7 @@ def console_scripts_main():
     plac.call(main)
 
 
-# The following allows users to invoke this using "python3 -m %PROJECT_NAME%".
+# The following allows users to invoke this using "python3 -m %MODULE_NAME%".
 if __name__ == '__main__':
     # Print help if the user supplied no command-line arguments.
     if len(sys.argv) == 1 or (len(sys.argv) > 1 and sys.argv[1] == 'help'):

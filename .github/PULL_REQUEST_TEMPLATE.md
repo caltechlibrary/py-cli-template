@@ -5,8 +5,6 @@ Please summarize what this pull request is about, and what it changes.
 ### Details
 
 Describe more about the changes you made:
-1. (...)
-2. (...)
 
 ### Software versions
 

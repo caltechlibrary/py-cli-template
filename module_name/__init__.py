@@ -1,5 +1,5 @@
 '''
-__init__.py for %PROJECT_NAME%
+__init__.py for %MODULE_NAME%
 
 Copyright
 ---------
@@ -18,8 +18,8 @@ file "LICENSE" for more information.
 #  ╰────────────────────── Notice ── Notice ── Notice ─────────────────────╯
 
 __version__     = '0.0.0'
-__description__ = '%PROJECT_DESCRIPTION%'
-__url__         = 'https://github.com/caltechlibrary/%PROJECT_URLNAME%'
+__description__ = '%DESCRIPTION%'
+__url__         = 'https://github.com/caltechlibrary/%REPO_NAME%'
 __author__      = '%AUTHOR_NAME%'
 __email__       = 'helpdesk@library.caltech.edu'
 __license__     = 'https://data.caltech.edu/license'

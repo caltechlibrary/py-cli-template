@@ -3,7 +3,7 @@
 # @brief   Makefile for some steps in creating new releases on GitHub
 # @date    %CREATION_DATE%
 # @license Please see the file named LICENSE in the project directory
-# @website https://github.com/caltechlibrary/%PROJECT_URLNAME%
+# @website https://github.com/caltechlibrary/%REPO_NAME%
 # =============================================================================
 
 .ONESHELL:                              # Run all commands in the same shell.
@@ -146,10 +146,10 @@ report: vars
 # make lint & make test ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 lint:
-	flake8 %PROJECT_URLNAME%
+	flake8 %MODULE_NAME%
 
 test tests:;
-	pytest -v --cov=%PROJECT_URLNAME% -l tests/
+	pytest -v --cov=%MODULE_NAME% -l tests/
 
 
 # make install ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

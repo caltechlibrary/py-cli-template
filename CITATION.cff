@@ -23,7 +23,7 @@ authors:
     family-names: Keswick
     orcid: "https://orcid.org/0000-0001-5644-440X"
 version: "1.9.0"
-abstract: "GitHub template project for non-web Python application projects"
+abstract: "GitHub repository template for non-web Python programs"
 repository-code: "https://github.com/caltechlibrary/py-cli-template"
 type: software
 license-url: "https://github.com/caltechlibrary/py-cli-template/blob/main/LICENSE"

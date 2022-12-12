@@ -11,14 +11,13 @@
 # The original file was copied on 2021-10-14.
 # =============================================================================
 
-while getopts a:e:n:u:d: flag
-do
+while getopts a:e:n:u:d: flag; do
     case "${flag}" in
         a) author=${OPTARG};;
-        e) email=${OPTARG};;
-        n) project_name=${OPTARG};;
-        u) urlname=${OPTARG};;
         d) description=${OPTARG};;
+        e) email=${OPTARG};;
+        m) module_name=${OPTARG};;
+        r) repo_name=${OPTARG};;
     esac
 done
 
@@ -32,13 +31,13 @@ echo "Author name: $author"
 echo "Author first name: $first_name"
 echo "Author family name: $family_name"
 echo "Author email: $email"
-echo "Project name: $project_name"
-echo "Project URL name: $urlname"
+echo "Repo name: $repo_name"
+echo "Module name: $module_name"
 echo "Description: $description"
 echo "Creation date: $creation_date"
 echo "Creation year: $creation_year"
 
-echo "Renaming project ..."
+echo "Performing substitutions in files ..."
 
 for filename in $(git ls-files)
 do
@@ -46,18 +45,20 @@ do
     sed -i "s/%AUTHOR_EMAIL%/$email/g" $filename
     sed -i "s/%AUTHOR_FIRST_NAME%/$first_name/g" $filename
     sed -i "s/%AUTHOR_FAMILY_NAME%/$family_name/g" $filename
-    sed -i "s/%PROJECT_NAME%/$project_name/g" $filename
-    sed -i "s/%PROJECT_URLNAME%/$urlname/g" $filename
-    sed -i "s/%PROJECT_DESCRIPTION%/$description/g" $filename
+    sed -i "s/%REPO_NAME%/$repo_name/g" $filename
+    sed -i "s/%DESCRIPTION%/$description/g" $filename
+    sed -i "s/%MODULE_NAME%/$module_name/g" $filename
     sed -i "s/%CREATION_DATE%/$creation_date/g" $filename
     sed -i "s/%CREATION_YEAR%/$creation_year/g" $filename
-    echo "Performed substitutions in $filename"
+    echo "Finished substitutions in $filename"
 done
 
-mv project_name $project_name
+echo "Renaming files and directories ..."
+
+mv module_name $module_name
 rm -f codemeta.json
 mv codemeta-TEMPLATE.json codemeta.json
 rm -f CITATION.cff
 mv CITATION-TEMPLATE.cff CITATION.cff
 
-echo "Renaming project ... Done."
+echo "Renaming ... Done."

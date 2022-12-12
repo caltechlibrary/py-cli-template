@@ -42,8 +42,8 @@
         "python",
         "software"
     ],
-    "name": "Caltech Library Python Software Repository Template",
-    "description": "Template repository for software projects by the Caltech Library",
+    "name": "py-cli-template",
+    "description": "GitHub repository template for non-web Python programs",
     "version": "1.9.0",
     "maintainer": "https://orcid.org/0000-0001-9105-5960",
     "funder": {

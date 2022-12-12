@@ -4,7 +4,7 @@
 # @brief   Installation setup file
 # @created %CREATION_DATE%
 # @license Please see the file named LICENSE in the project directory
-# @website https://github.com/caltechlibrary/%PROJECT_URLNAME%
+# @website https://github.com/caltechlibrary/%REPO_NAME%
 #
 # Note: the full configuration metadata is maintained in setup.cfg, not here.
 # This file exists to hook in setup.cfg and requirements.txt, so that the
