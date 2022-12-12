@@ -11,7 +11,7 @@
 # The original file was copied on 2021-10-14.
 # =============================================================================
 
-while getopts a:e:n:u:d: flag; do
+while getopts a:d:e:m:r: flag; do
     case "${flag}" in
         a) author=${OPTARG};;
         d) description=${OPTARG};;
