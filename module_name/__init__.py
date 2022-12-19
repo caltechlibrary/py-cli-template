@@ -22,8 +22,7 @@ __description__ = '%DESCRIPTION%'
 __url__         = 'https://github.com/caltechlibrary/%REPO_NAME%'
 __author__      = '%AUTHOR_NAME%'
 __email__       = 'helpdesk@library.caltech.edu'
-__license__     = 'https://data.caltech.edu/license'
-
+__license__     = 'https://github.com/caltechlibrary/%REPO_NAME%/blob/main/LICENSE'
 
 # Miscellaneous utilities.
 # .............................................................................
